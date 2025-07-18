@@ -18,6 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 })
 
+// Brand color for icons - should match tailwind.config.ts
+const BRAND_ICON_COLOR = "4DCF8E"
+
 export const metadata: Metadata = {
   title: "retweet.fun - Transform Your Social Influence",
   description: "Revolutionary platform for purchasing influencer tokens and requesting social media actions.",
@@ -25,18 +28,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://img.icons8.com/?size=32&id=Axgf1IBhLcYr&format=png&color=C5DCFA",
+        url: `https://img.icons8.com/?size=32&id=Axgf1IBhLcYr&format=png&color=${BRAND_ICON_COLOR}`,
         sizes: "32x32",
         type: "image/png",
       },
       {
-        url: "https://img.icons8.com/?size=16&id=Axgf1IBhLcYr&format=png&color=C5DCFA",
+        url: `https://img.icons8.com/?size=16&id=Axgf1IBhLcYr&format=png&color=${BRAND_ICON_COLOR}`,
         sizes: "16x16",
         type: "image/png",
       },
     ],
     apple: {
-      url: "https://img.icons8.com/?size=180&id=Axgf1IBhLcYr&format=png&color=C5DCFA",
+      url: `https://img.icons8.com/?size=180&id=Axgf1IBhLcYr&format=png&color=${BRAND_ICON_COLOR}`,
       sizes: "180x180",
       type: "image/png",
     },

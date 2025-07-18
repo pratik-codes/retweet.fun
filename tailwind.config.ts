@@ -1,7 +1,5 @@
-import type { Config } from "tailwindcss"
-
+import type { Config } from "tailwindcss";
 // all in fixtures is set to tailwind v3 as interims solutions
-
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -23,8 +21,14 @@ const config: Config = {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        primary: "#C5DCFA",
-        foreground: "hsl(var(--primary-foreground))",
+        primary: {
+          DEFAULT: "#FF2C2C", // Bright blood red (dark mode)
+          foreground: "#FFFFFF",
+          dark: "#CC0000", // Dark blood red
+          light: "#FF8A8A", // Light red for light mode
+          rgb: "255, 44, 44", // For rgba() usage in CSS
+          "rgb-light": "255, 138, 138", // For rgba() usage in light mode
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -60,6 +64,57 @@ const config: Config = {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        // Brand colors with adaptive theme (light/dark mode)
+        brand: {
+          primary: "#FF2C2C", // Bright blood red (dark mode)
+          "primary-light": "#FF8A8A", // Light red for light mode
+          secondary: "#CC0000", // Dark blood red
+          "secondary-light": "#FF9999", // Light secondary for light mode
+          tertiary: "#FF4444", // Lighter blood red
+          "tertiary-light": "#FFB3B3", // Light tertiary for light mode
+          accent: "#FF0000", // Pure red
+          "accent-light": "#FF6666", // Light accent for light mode
+          light: "#FF6666", // Light blood red
+          dark: "#990000", // Very dark blood red
+          rgb: "255, 44, 44", // For rgba() usage (dark mode)
+          "rgb-light": "255, 138, 138", // For rgba() usage (light mode)
+          "rgb-secondary": "204, 0, 0", // For rgba() usage
+          "rgb-secondary-light": "255, 153, 153", // For rgba() usage (light mode)
+          "rgb-tertiary": "255, 68, 68", // For rgba() usage
+          "rgb-tertiary-light": "255, 179, 179", // For rgba() usage (light mode)
+          "rgb-accent": "255, 0, 0", // For rgba() usage
+          "rgb-accent-light": "255, 102, 102", // For rgba() usage (light mode)
+          icon: "FF2C2C", // For URL parameters (without #)
+          "icon-light": "FF8A8A", // For URL parameters (light mode)
+        },
+        // Blood red palette based on #FF2C2C
+        blood: {
+          50: "#FFF5F5",
+          100: "#FFE3E3",
+          200: "#FFCCCC",
+          300: "#FFB3B3",
+          400: "#FF8080",
+          500: "#FF4D4D",
+          600: "#FF2C2C",
+          700: "#CC0000",
+          800: "#990000",
+          900: "#660000",
+          950: "#330000",
+        },
+        // Keep standard red for versatility
+        red: {
+          50: "#FEF2F2",
+          100: "#FEE2E2",
+          200: "#FECACA",
+          300: "#FCA5A5",
+          400: "#F87171",
+          500: "#EF4444",
+          600: "#DC2626",
+          700: "#B91C1C",
+          800: "#991B1B",
+          900: "#7F1D1D",
+          950: "#450A0A",
         },
       },
       fontFamily: {
@@ -97,5 +152,5 @@ const config: Config = {
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;

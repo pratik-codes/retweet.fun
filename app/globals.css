@@ -191,82 +191,167 @@ html {
   animation-play-state: paused;
 }
 
-/* Subtle Aurora Effect for Hero Section */
-@keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 100% 30%;
-  }
-  50% {
-    background-position: 200% 50%;
-  }
-  75% {
-    background-position: 100% 70%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Spacedrive-style Starfield Effect for Hero Section */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
 }
 
-@keyframes aurora-secondary {
-  0% {
-    transform: translateX(-100%) rotate(10deg);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateX(100%) rotate(-5deg);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateX(300%) rotate(15deg);
-    opacity: 0.2;
-  }
+@keyframes drift {
+  0% { transform: translateX(0) translateY(0); }
+  33% { transform: translateX(30px) translateY(-30px); }
+  66% { transform: translateX(-20px) translateY(20px); }
+  100% { transform: translateX(0) translateY(0); }
 }
 
-.aurora-hero {
+.starfield-hero {
   position: relative;
   overflow: hidden;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(15, 23, 42, 0.8) 0%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
 }
 
-.aurora-hero::before {
+.starfield-hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 300%;
-  height: 300%;
-  background: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(197, 220, 250, 0.1) 20%,
-    rgba(131, 185, 254, 0.15) 40%,
-    transparent 60%,
-    rgba(197, 220, 250, 0.08) 80%,
-    transparent 100%
-  );
-  background-size: 400% 400%;
-  animation: aurora 12s ease-in-out infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(theme('colors.brand.rgb'), 0.9), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(theme('colors.brand.rgb-secondary'), 0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(theme('colors.brand.rgb'), 0.7), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 160px 30px, rgba(theme('colors.brand.rgb'), 0.8), transparent),
+    radial-gradient(2px 2px at 180px 10px, rgba(theme('colors.brand.rgb-secondary'), 0.9), transparent),
+    radial-gradient(1px 1px at 230px 60px, rgba(theme('colors.brand.rgb'), 0.6), transparent),
+    radial-gradient(1px 1px at 270px 90px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 320px 40px, rgba(theme('colors.brand.rgb'), 0.8), transparent),
+    radial-gradient(2px 2px at 380px 20px, rgba(theme('colors.brand.rgb-secondary'), 0.9), transparent),
+    radial-gradient(1px 1px at 420px 70px, rgba(theme('colors.brand.rgb'), 0.7), transparent),
+    radial-gradient(1px 1px at 480px 50px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 520px 90px, rgba(theme('colors.brand.rgb'), 0.8), transparent),
+    radial-gradient(1px 1px at 580px 30px, rgba(theme('colors.brand.rgb-secondary'), 0.7), transparent),
+    radial-gradient(2px 2px at 620px 60px, rgba(theme('colors.brand.rgb'), 0.9), transparent),
+    radial-gradient(1px 1px at 680px 80px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 720px 40px, rgba(theme('colors.brand.rgb'), 0.7), transparent),
+    radial-gradient(1px 1px at 780px 70px, rgba(theme('colors.brand.rgb-secondary'), 0.8), transparent),
+    radial-gradient(1px 1px at 820px 20px, rgba(theme('colors.brand.rgb'), 0.6), transparent),
+    radial-gradient(2px 2px at 860px 90px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 920px 50px, rgba(theme('colors.brand.rgb'), 0.7), transparent),
+    radial-gradient(1px 1px at 980px 30px, rgba(theme('colors.brand.rgb-secondary'), 0.8), transparent),
+    radial-gradient(1px 1px at 1020px 80px, rgba(theme('colors.brand.rgb'), 0.6), transparent),
+    radial-gradient(1px 1px at 1080px 60px, rgba(255, 255, 255, 0.7), transparent);
+  background-repeat: repeat;
+  background-size: 1100px 400px;
+  animation: drift 45s ease-in-out infinite;
   pointer-events: none;
   z-index: -2;
 }
 
-.aurora-hero::after {
+.starfield-hero::after {
   content: '';
   position: absolute;
-  top: 20%;
-  left: -100%;
-  width: 300%;
-  height: 60%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(197, 220, 250, 0.05) 30%,
-    rgba(131, 185, 254, 0.1) 50%,
-    transparent 70%
-  );
-  animation: aurora-secondary 18s linear infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 60px 15px, rgba(theme('colors.brand.rgb'), 0.5), transparent),
+    radial-gradient(1px 1px at 120px 45px, rgba(theme('colors.brand.rgb-secondary'), 0.6), transparent),
+    radial-gradient(2px 2px at 200px 25px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 280px 65px, rgba(theme('colors.brand.rgb'), 0.4), transparent),
+    radial-gradient(1px 1px at 340px 85px, rgba(theme('colors.brand.rgb-secondary'), 0.7), transparent),
+    radial-gradient(1px 1px at 400px 35px, rgba(theme('colors.brand.rgb'), 0.6), transparent),
+    radial-gradient(2px 2px at 460px 75px, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 540px 15px, rgba(theme('colors.brand.rgb'), 0.7), transparent),
+    radial-gradient(1px 1px at 600px 55px, rgba(theme('colors.brand.rgb-secondary'), 0.4), transparent),
+    radial-gradient(1px 1px at 660px 85px, rgba(theme('colors.brand.rgb'), 0.8), transparent),
+    radial-gradient(2px 2px at 740px 25px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 800px 65px, rgba(theme('colors.brand.rgb-secondary'), 0.7), transparent),
+    radial-gradient(1px 1px at 880px 45px, rgba(theme('colors.brand.rgb'), 0.5), transparent),
+    radial-gradient(1px 1px at 940px 75px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(2px 2px at 1000px 35px, rgba(theme('colors.brand.rgb'), 0.9), transparent);
+  background-repeat: repeat;
+  background-size: 1100px 400px;
+  animation: twinkle 8s ease-in-out infinite alternate, drift 60s ease-in-out infinite reverse;
   pointer-events: none;
   z-index: -1;
+}
+
+/* Subtle Glow Effects */
+.glow-subtle {
+  box-shadow: 0 0 20px rgba(theme('colors.brand.rgb'), 0.15);
+}
+
+.glow-medium {
+  box-shadow: 0 0 30px rgba(theme('colors.brand.rgb'), 0.25);
+}
+
+.glow-strong {
+  box-shadow: 0 0 40px rgba(theme('colors.brand.rgb'), 0.35);
+}
+
+.glow-hero {
+  box-shadow: 
+    0 0 60px rgba(theme('colors.brand.rgb'), 0.3),
+    0 0 120px rgba(theme('colors.brand.rgb'), 0.15),
+    inset 0 0 60px rgba(theme('colors.brand.rgb'), 0.05);
+}
+
+.glow-button {
+  box-shadow: 
+    0 0 25px rgba(theme('colors.brand.rgb'), 0.4),
+    0 4px 8px rgba(theme('colors.brand.rgb-secondary'), 0.3);
+}
+
+.glow-button:hover {
+  box-shadow: 
+    0 0 35px rgba(theme('colors.brand.rgb'), 0.6),
+    0 6px 12px rgba(theme('colors.brand.rgb-secondary'), 0.4);
+}
+
+.glow-card {
+  box-shadow: 
+    0 0 30px rgba(theme('colors.brand.rgb'), 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glow-card:hover {
+  box-shadow: 
+    0 0 40px rgba(theme('colors.brand.rgb'), 0.2),
+    0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* Ambient background glow */
+.glow-ambient {
+  position: relative;
+}
+
+.glow-ambient::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(theme('colors.brand.rgb'), 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Text glow effects */
+.text-glow {
+  text-shadow: 0 0 20px rgba(theme('colors.brand.rgb'), 0.5);
+}
+
+.text-glow-strong {
+  text-shadow: 
+    0 0 10px rgba(theme('colors.brand.rgb'), 0.8),
+    0 0 20px rgba(theme('colors.brand.rgb'), 0.6),
+    0 0 30px rgba(theme('colors.brand.rgb'), 0.4);
 }
