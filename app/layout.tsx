@@ -28,18 +28,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: `https://img.icons8.com/?size=32&id=Axgf1IBhLcYr&format=png&color=${BRAND_ICON_COLOR}`,
+        url: "/retweet.fun.png",
         sizes: "32x32",
         type: "image/png",
       },
       {
-        url: `https://img.icons8.com/?size=16&id=Axgf1IBhLcYr&format=png&color=${BRAND_ICON_COLOR}`,
+        url: "/retweet.fun.png",
         sizes: "16x16",
         type: "image/png",
       },
     ],
     apple: {
-      url: `https://img.icons8.com/?size=180&id=Axgf1IBhLcYr&format=png&color=${BRAND_ICON_COLOR}`,
+      url: "/retweet.fun.png",
       sizes: "180x180",
       type: "image/png",
     },

@@ -170,21 +170,21 @@ export default function App() {
         </div>
         <div className="hidden md:flex space-x-2 items-center">
           <Link
-            href="/coming-soon"
+            href="#how-it-works"
             className="relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-in-out group text-white hover:text-black"
           >
             <span className="relative z-10">How It Works</span>
             <div className="absolute inset-0 bg-brand-primary rounded-full opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out glow-button"></div>
           </Link>
           <Link
-            href="/coming-soon"
+            href="#benefits"
             className="relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-in-out group text-white hover:text-black"
           >
             <span className="relative z-10">Benefits</span>
             <div className="absolute inset-0 bg-brand-primary rounded-full opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out glow-button"></div>
           </Link>
           <Link
-            href="/coming-soon"
+            href="#token-economics"
             className="relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-in-out group text-white hover:text-black"
           >
             <span className="relative z-10">Tokens</span>
@@ -387,7 +387,7 @@ export default function App() {
               
               {/* Step 1: Buy Creator Tokens */}
               <div
-                className={`text-center transition-all duration-1000 ease-out delay-400 ${
+                className={`text-center transition-all duration-1000 ease-out delay-400 flex flex-col h-full ${
                   howItWorksVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
               >
@@ -397,16 +397,16 @@ export default function App() {
                   Buy Creator Tokens
                 </h3>
                 <p
-                  className={`text-base leading-relaxed mb-8 text-gray-300`}
+                  className={`text-base leading-relaxed mb-8 text-gray-300 flex-grow`}
                 >
                   Purchase tokens from your favorite Twitter influencers using SOL. Token prices adjust dynamically based on demand.
                 </p>
 
                 {/* Visual Mockup for Step 1 */}
                 <div
-                  className={`relative rounded-2xl p-6 backdrop-blur-sm border transition-all duration-500 hover:scale-105 glow-card bg-gray-900/60 border-gray-800`}
+                  className={`relative rounded-2xl p-6 border transition-all duration-500 hover:scale-105 border-gray-800 flex-grow flex flex-col justify-between min-h-[400px]`}
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-4 flex-grow flex flex-col justify-center">
                     {/* Creator Selection */}
                     <div className="flex items-center gap-3 p-3 rounded-lg bg-brand-primary/10 border border-brand-primary/20">
                       <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center">
@@ -443,7 +443,7 @@ export default function App() {
 
               {/* Step 2: Request Actions */}
               <div
-                className={`text-center transition-all duration-1000 ease-out delay-600 ${
+                className={`text-center transition-all duration-1000 ease-out delay-600 flex flex-col h-full ${
                   howItWorksVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
               >
@@ -453,16 +453,16 @@ export default function App() {
                   Request Actions
                 </h3>
                 <p
-                  className={`text-base leading-relaxed mb-8 text-gray-300`}
+                  className={`text-base leading-relaxed mb-8 text-gray-300 flex-grow`}
                 >
                   Spend tokens to request retweets, likes, custom tweets, or shoutouts. Each action has a different cost.
                 </p>
 
                 {/* Visual Mockup for Step 2 */}
                 <div
-                  className={`relative rounded-2xl p-6 backdrop-blur-sm border transition-all duration-500 hover:scale-105 glow-card bg-gray-900/60 border-gray-800`}
+                  className={`relative rounded-2xl p-6 border transition-all duration-500 hover:scale-105 border-gray-800 flex-grow flex flex-col justify-between min-h-[400px]`}
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-4 flex-grow flex flex-col justify-center">
                     {/* Action Options */}
                     <div className="space-y-3">
                       <div className="flex items-center justify-between p-3 rounded-lg bg-brand-primary/10 border border-brand-primary/20">
@@ -501,7 +501,7 @@ export default function App() {
 
               {/* Step 3: Earn & Track */}
               <div
-                className={`text-center transition-all duration-1000 ease-out delay-800 ${
+                className={`text-center transition-all duration-1000 ease-out delay-800 flex flex-col h-full ${
                   howItWorksVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
               >
@@ -511,16 +511,16 @@ export default function App() {
                   Earn & Track
                 </h3>
                 <p
-                  className={`text-base leading-relaxed mb-8 text-gray-300`}
+                  className={`text-base leading-relaxed mb-8 text-gray-300 flex-grow`}
                 >
                   Hold tokens to earn passive income and track your portfolio performance in real-time.
                 </p>
 
                 {/* Visual Mockup for Step 3 */}
                 <div
-                  className={`relative rounded-2xl p-6 backdrop-blur-sm border transition-all duration-500 hover:scale-105 glow-card bg-gray-900/60 border-gray-800`}
+                  className={`relative rounded-2xl p-6 border transition-all duration-500 hover:scale-105 border-gray-800 flex-grow flex flex-col justify-between min-h-[400px]`}
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-4 flex-grow flex flex-col justify-center">
                     {/* Stats Header */}
                     <div className="text-left">
                       <div className={`text-sm font-medium mb-2 text-gray-400`}>
@@ -862,19 +862,19 @@ export default function App() {
             <h4 className="font-semibold mb-4 text-white">Platform</h4>
             <div className="space-y-2 text-gray-400">
               <Link
-                href="/coming-soon"
+                href="#how-it-works"
                 className="block transition-colors hover:text-white"
               >
                 How It Works
               </Link>
               <Link
-                href="/coming-soon"
+                href="#token-economics"
                 className="block transition-colors hover:text-white"
               >
                 Token Economics
               </Link>
               <Link
-                href="/coming-soon"
+                href="#security"
                 className="block transition-colors hover:text-white"
               >
                 Security
